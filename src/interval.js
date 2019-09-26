@@ -43,8 +43,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    includes(interval) {
-
+    includes(interval) 
+	{
+		return this.end >= interval.end && this.start <= interval.start;
     };
 
     /**
@@ -63,8 +64,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    union(interval) {
-
+    union(interval) 
+	{
+		return [Math.min(this.start,interval.start),Math.max(this.end,interval.end)];
     };
 
     /**

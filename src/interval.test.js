@@ -29,3 +29,18 @@ describe('Interval-Includes',function()
 		expect(obj4.includes(obj3)).toBe(false);
 	});
 });
+describe('Interval-Union',function()
+{
+	test('Test Union between Interval(0,1) and Interval(1,5) => [0,5]',()=>
+	{
+		var objet1 = new Interval(0,1);
+		var objet2 = new Interval(1,5);
+		expect(objet1.union(objet2)).toEqual(Array(0,5));
+	});
+	test('Test Union between Interval(5,8) and Interval(7,15) => [5,15]',() =>
+	{
+		var obj3 = new Interval(7,15);
+		var obj4 = new Interval(5,15);
+		expect(obj4.union(obj3)).toEqual(Array(5,15));
+	});
+});

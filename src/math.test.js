@@ -54,9 +54,12 @@ describe('sumPrime',function(){
       });
 });
 describe('fizzBuzz',function(){
-  test('fizzBuzz de 15',()=>{
-        expect(Util.fizzBuzz(3)).toEqual([1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz","Buzz",11,"Fizz",13,14,"FizzBuzz"]);
+  test('fizzBuzz de 2',()=>{
+        expect(Util.fizzBuzz(2)).toEqual([2,1]);
   });
+  test('fizzBuzz de 5',() => {
+	  expect(Util.fizzBuzz(5)).toEqual(["Buzz",4,"Fizz",2,1])
+	});
 });
 describe('cipher',function(){
   test('cipher de A',()=>{

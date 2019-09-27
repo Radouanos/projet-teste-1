@@ -85,8 +85,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval) {
-
+    intersection(interval) 
+	{
+		//if(this.start < interval.end || interval.start < this.end)
     };
 
     /**
@@ -105,7 +106,8 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interval) {
+    exclusion(interval) 
+	{
 
     };
 }

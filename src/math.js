@@ -48,9 +48,9 @@ Util.isPrime = function (n) {
  */
 Util.sumPrime = function(n)
 {
-    if(!(Util.isPrime(n)))
+    if(Util.isPrime(n))
     {
-        if(n==1)
+        if(n<2)
         {
           return 0;
         } else
@@ -58,11 +58,11 @@ Util.sumPrime = function(n)
     }
       else
     {
-        if(n==1)
+        if(n<2)
         {
             return 0;
-          } else
-        return Util.sumPrime(n-1);
+        } 
+		else return Util.sumPrime(n-1);
     }
 };
 
@@ -80,22 +80,23 @@ Util.sumPrime = function(n)
  */
 Util.fizzBuzz = function(n)
 {
-  var arrayFizz=[];
-    for(let i=n;i>0;i--)
+  var arrayFizz=Array();
+    while(n>0)
     {
         if((n % 3)==0 && (n % 5)==0)
-      {
-          arrayFizz.push("FizzBuzz")
-      }
-      else if((n % 3)==0)
-      {
-          arrayFizz.push("Fizz");
-      }
-      else if((n % 5)==0)
-      {
-          arrayFizz.push("Buzz");
-      }
-      else arrayFizz.push(n);
+			{
+				arrayFizz.push("FizzBuzz")
+			}
+		else if((n % 3)==0)
+			{
+				arrayFizz.push("Fizz");
+			}
+		else if((n % 5)==0)
+			{
+				arrayFizz.push("Buzz");
+			}
+		else arrayFizz.push(n);
+		n--;
     }
     return arrayFizz;
 };

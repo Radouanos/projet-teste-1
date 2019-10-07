@@ -85,8 +85,28 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval) {
+    intersection(interval)//1
+    {
+        if(this.overlaps(interval))
+        {
+            if(this.start<interval.start)
+            {
+                if(this.end<interval.end)
+                {
+                    return new Interval(interval.start,this.end);
+                }
+                else return new Interval(interval.start,interval.end);
+            }else
+            {
+                if(this.end<interval.end)
+                {
+                    return new interval(this.start,this.end);
+                }
+                else return new Interval(this.start,interval.end);
+            }
 
+        }
+        else return [];
     };
 
     /**
@@ -105,8 +125,45 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interval) {
-
+    exclusion(interval)//2
+    {
+      /*  var interv;
+        if(this.overlaps(interval))
+        {
+            interv=this.intersection(interval);
+            if(this.start<=interv.start && this.end<=interv.start)
+            {
+                return [new Interval(this.start,this.end),new Interval(interv.start,interv.end)];
+            }
+                else if(this.start<=interv.start && this.end>=interv.start )
+            {
+                if(this.end<=interv.end)
+                {
+                    return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
+                }
+                else return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
+            } else if(this.start>=interv.start && this.end>=interv.start)
+            {
+                    if(this.start<=interv.end)
+                {
+                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
+                }
+                    else
+                {
+                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
+                }
+            } else if(interv.start<=this.start && this.start>=interv.end) {
+                return [new Interval(interv.start, interv.end), new Interval(this.start, this.end)];
+            }
+        }
+        else
+        {
+            if(this.start<interval.start)
+            {
+                return [new Interval(this.start,this.end),interval];
+            }
+            else return [interval,new Interval(this.start,this.end)];
+        }*/
     };
 }
 

@@ -1,5 +1,6 @@
 const Util = require('./math');
-test('Test factoriel de 0 => 1', () => {
+test('Test factoriel de 0 => 1', () =>
+{
     expect(Util.factorial(0)).toBe(1);
 });
 
